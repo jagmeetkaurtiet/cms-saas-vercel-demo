@@ -12,6 +12,9 @@ import { OptimizelyOneProvider } from '@remkoj/optimizely-one-nextjs/client'
 import { Scripts } from '@remkoj/optimizely-one-nextjs/server'
 import GoogleAnalytics from '@/components/integrations/google-analytics'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import YTHeader from "./shared/header";
+import YTFooter from "./shared/footer";
+import "./styles/ytdemo.css";
 
 const figtree = Figtree({ subsets: ["latin"] });
 
@@ -67,9 +70,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Body className={`${figtree.className} bg-ghost-white dark:bg-vulcan dark:text-white overflow-x-hidden`}>
           <div className="flex min-h-screen flex-col justify-between">
             <OptimizelyOneProvider value={{ debug: true }} >
-              <Header />
+              <YTHeader/>
                 <main className="grow">{ children }</main>
-              <Footer />
+                <YTFooter/>
             </OptimizelyOneProvider>
             <Scripts.Footer />
             <GoogleAnalytics measurementId={ga_id} />

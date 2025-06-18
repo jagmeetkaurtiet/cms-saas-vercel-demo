@@ -24,6 +24,7 @@ const documents = {
     "fragment CarouselBlockData on CarouselBlock {\n  CarouselItemsContentArea {\n    ...IContentListItem\n  }\n}": types.CarouselBlockDataFragmentDoc,
     "fragment ContentRecsBlockData on ContentRecsBlock {\n  BlockDeliveryApiKey\n  BlockRecommendationCount\n}": types.ContentRecsBlockDataFragmentDoc,
     "fragment ContentRecsElementData on ContentRecsElement {\n  ElementDeliveryApiKey\n  ElementRecommendationCount\n}": types.ContentRecsElementDataFragmentDoc,
+    "fragment DemoHeroBlockData on DemoHeroBlock {\n  Title\n  SubTitle\n  CTA {\n    ...LinkData\n  }\n}": types.DemoHeroBlockDataFragmentDoc,
     "fragment HeadingElementData on HeadingElement {\n  headingText\n}": types.HeadingElementDataFragmentDoc,
     "fragment HeroBlockData on HeroBlock {\n  heroImage: HeroImage {\n    ...ReferenceData\n  }\n  eyebrow: Eyebrow\n  heroHeading: Heading\n  heroSubheading: SubHeading\n  heroDescription: Description {\n    json\n    html\n  }\n  heroColor: HeroColor\n  heroButton: HeroButton {\n    ...ButtonBlockPropertyData\n  }\n}": types.HeroBlockDataFragmentDoc,
     "fragment HomePageHeroBlockData on HomePageHeroBlock {\n  homeHeroHeading: HomeHeroBlockHeading\n  homeHeroSubheading: HomeHeroBlockSubHeading\n  leftImage: HomeHeroLeftImage {\n    ...ReferenceData\n  }\n  rightImage: HomeHeroRightImage {\n    ...ReferenceData\n  }\n  homeHeroButton: HomeHeroButtonBlock {\n    ...ButtonBlockPropertyData\n  }\n}": types.HomePageHeroBlockDataFragmentDoc,
@@ -52,6 +53,7 @@ const documents = {
     "query getStartPageMetaData($key: String!, $version: String, $locale: [Locales]) {\n  StartPage(\n    where: {_metadata: {key: {eq: $key}, version: {eq: $version}}}\n    locale: $locale\n  ) {\n    pages: items {\n      _metadata {\n        displayName\n        key\n        version\n        locale\n      }\n      SiteImageLogo {\n        ...ReferenceData\n      }\n      SeoSettings {\n        MetaTitle\n        MetaDescription\n        SharingImage {\n          ...ReferenceData\n        }\n        GraphType\n      }\n    }\n  }\n}": types.getStartPageMetaDataDocument,
     "fragment StartPageData on StartPage {\n  HomePageHeroContentArea {\n    ...BlockData\n  }\n  HomePageMainContentArea {\n    ...BlockData\n  }\n}": types.StartPageDataFragmentDoc,
     "fragment StartPageSearchData on StartPage {\n  seodata: SeoSettings {\n    MetaTitle\n    MetaDescription\n    SharingImage {\n      ...ReferenceData\n    }\n  }\n}": types.StartPageSearchDataFragmentDoc,
+    "fragment YTHomePageData on YTHomePage {\n  YTTitle\n  YTMain {\n    ...BlockData\n  }\n}": types.YTHomePageDataFragmentDoc,
     "fragment BlankSectionData on BlankSection {\n  _metadata {\n    key\n  }\n}": types.BlankSectionDataFragmentDoc,
     "query getFooter($locale: [Locales] = en) {\n  menuItems: StartPage(locale: $locale) {\n    items {\n      footerSubLinks: FooterNavigationSubLinks {\n        ...LinkItemData\n      }\n      footerCopyright: FooterNavigationCopyrightText\n      footerNavigation: FooterNavigationContentArea {\n        __typename\n        ...FooterMenuNavigationItem\n        ...HtmlBlock\n      }\n    }\n  }\n}\n\nfragment HtmlBlock on HtmlBlock {\n  title: HtmlBlockHeading\n  content: HtmlContent {\n    json\n    html\n  }\n  __typename\n}\n\nfragment FooterMenuNavigationItem on MenuNavigationBlock {\n  title: MenuNavigationHeading\n  items: NavigationLinks {\n    url {\n      ...LinkData\n    }\n    title\n    target\n    text\n  }\n  __typename\n}": types.getFooterDocument,
     "query getHeader($locale: [Locales]) {\n  menuItems: StartPage(locale: $locale) {\n    items {\n      logo: SiteImageLogo {\n        ...ReferenceData\n      }\n      headerNavigation: MainNavigationContentArea {\n        ...MegaMenuItem\n      }\n      UtilityNavigationContentArea {\n        ...MenuItem\n      }\n    }\n  }\n}\n\nfragment MegaMenuItem on MegaMenuGroupBlock {\n  menuName: MenuMenuHeading\n  menuData: MegaMenuContentArea {\n    ...MenuItem\n  }\n}\n\nfragment MenuItem on _IContent {\n  __typename\n  ...MenuNavigationItem\n  ...MenuCardItem\n  ...MenuButton\n}\n\nfragment MenuButton on ButtonBlock {\n  text: ButtonText\n  url: ButtonUrl {\n    ...LinkData\n  }\n  type: ButtonType\n  variant: ButtonVariant\n  __typename\n}\n\nfragment MenuNavigationItem on MenuNavigationBlock {\n  title: MenuNavigationHeading\n  items: NavigationLinks {\n    ...LinkItemData\n  }\n  __typename\n}\n\nfragment MenuCardItem on CardBlock {\n  heading: CardHeading\n  subheading: CardSubHeading\n  description: CardDescription {\n    json\n  }\n  color: CardColor\n  image: CardImage {\n    src: url {\n      ...LinkData\n    }\n  }\n  link: CardButton {\n    title: ButtonText\n    url: ButtonUrl {\n      ...LinkData\n    }\n  }\n  __typename\n}\n\nfragment LinkItemData on Link {\n  title\n  text\n  target\n  url {\n    ...LinkData\n  }\n}": types.getHeaderDocument,
@@ -115,6 +117,10 @@ export function gql(source: "fragment ContentRecsBlockData on ContentRecsBlock {
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment ContentRecsElementData on ContentRecsElement {\n  ElementDeliveryApiKey\n  ElementRecommendationCount\n}"): (typeof documents)["fragment ContentRecsElementData on ContentRecsElement {\n  ElementDeliveryApiKey\n  ElementRecommendationCount\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment DemoHeroBlockData on DemoHeroBlock {\n  Title\n  SubTitle\n  CTA {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment DemoHeroBlockData on DemoHeroBlock {\n  Title\n  SubTitle\n  CTA {\n    ...LinkData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -227,6 +233,10 @@ export function gql(source: "fragment StartPageData on StartPage {\n  HomePageHe
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment StartPageSearchData on StartPage {\n  seodata: SeoSettings {\n    MetaTitle\n    MetaDescription\n    SharingImage {\n      ...ReferenceData\n    }\n  }\n}"): (typeof documents)["fragment StartPageSearchData on StartPage {\n  seodata: SeoSettings {\n    MetaTitle\n    MetaDescription\n    SharingImage {\n      ...ReferenceData\n    }\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment YTHomePageData on YTHomePage {\n  YTTitle\n  YTMain {\n    ...BlockData\n  }\n}"): (typeof documents)["fragment YTHomePageData on YTHomePage {\n  YTTitle\n  YTMain {\n    ...BlockData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

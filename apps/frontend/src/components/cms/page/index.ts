@@ -5,6 +5,7 @@ import StartPageComponent from "./StartPage";
 import StandardPageComponent from "./StandardPage";
 import LandingPageComponent from "./LandingPage";
 import BlogPostPageComponent from "./BlogPostPage";
+import YTHomePage from "./YTHomePage";
 
 // Build dictionary
 export const PageFactory : ComponentTypeDictionary = [
@@ -23,7 +24,12 @@ export const PageFactory : ComponentTypeDictionary = [
     { 
         type: "BlogPostPage", 
         component: BlogPostPageComponent 
+    },
+    {
+        type:"YTHomePage",
+        component:YTHomePage
     }
+
 ];
 
 // Export dictionary

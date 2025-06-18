@@ -1,0 +1,6 @@
+fragment YTHomePageData on YTHomePage {
+  YTTitle
+  YTMain {
+    ...BlockData
+  }
+}

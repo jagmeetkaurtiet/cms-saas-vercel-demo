@@ -28,6 +28,7 @@ import ButtonBlockComponent from "./ButtonBlock";
 import BlogListingBlockComponent from "./BlogListingBlock";
 import BlogListingBlockBlogListingBlockComponent from "./BlogListingBlock/blog-listing-block";
 import ArticleListElementComponent from "./ArticleListElement";
+import DemoHero from "./DemoHeroBlock";
 
 // Build dictionary
 export const ComponentFactory : ComponentTypeDictionary = [
@@ -138,6 +139,10 @@ export const ComponentFactory : ComponentTypeDictionary = [
     { 
         type: "ArticleListElement", 
         component: ArticleListElementComponent 
+    },
+    { 
+        type: "DemoHeroBlock", 
+        component: DemoHero 
     }
 ];
 
