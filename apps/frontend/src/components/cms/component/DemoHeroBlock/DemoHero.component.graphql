@@ -1,5 +1,0 @@
-fragment DemoHeroBlockData on DemoHeroBlock{
-Title
-SubTitle
-CTA{...LinkData}
-}
