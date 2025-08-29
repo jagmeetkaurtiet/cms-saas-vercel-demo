@@ -1,0 +1,9 @@
+fragment JsonLDBlockData on JsonLDBlock {
+  context
+  type
+  dateModified
+  datePublished
+  headline
+  image
+  seourl:url
+}

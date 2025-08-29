@@ -149,15 +149,6 @@ export const ContentRecsElementDataFragmentDoc = gql`
   ElementRecommendationCount
 }
     `;
-export const DemoHeroBlockDataFragmentDoc = gql`
-    fragment DemoHeroBlockData on DemoHeroBlock {
-  Title
-  SubTitle
-  CTA {
-    ...LinkData
-  }
-}
-    `;
 export const HeadingElementDataFragmentDoc = gql`
     fragment HeadingElementData on HeadingElement {
   headingText
@@ -222,6 +213,17 @@ export const ImageElementDataFragmentDoc = gql`
   imageLink {
     ...ReferenceData
   }
+}
+    `;
+export const JsonLDBlockDataFragmentDoc = gql`
+    fragment JsonLDBlockData on JsonLDBlock {
+  context
+  type
+  dateModified
+  datePublished
+  headline
+  image
+  seourl: url
 }
     `;
 export const MegaMenuGroupBlockDataFragmentDoc = gql`
@@ -346,12 +348,12 @@ export const LayoutContainerBlockDataFragmentDoc = gql`
     ...CarouselBlockData
     ...ContentRecsBlockData
     ...ContentRecsElementData
-    ...DemoHeroBlockData
     ...HeadingElementData
     ...HeroBlockData
     ...HomePageHeroBlockData
     ...HtmlBlockData
     ...ImageElementData
+    ...JsonLDBlockData
     ...LayoutContainerBlockData
     ...MegaMenuGroupBlockData
     ...MenuNavigationBlockData
@@ -402,12 +404,12 @@ export const CompositionDataFragmentDoc = gql`
       ...CarouselBlockData
       ...ContentRecsBlockData
       ...ContentRecsElementData
-      ...DemoHeroBlockData
       ...HeadingElementData
       ...HeroBlockData
       ...HomePageHeroBlockData
       ...HtmlBlockData
       ...ImageElementData
+      ...JsonLDBlockData
       ...LayoutContainerBlockData
       ...MegaMenuGroupBlockData
       ...MenuNavigationBlockData
@@ -479,12 +481,12 @@ export const LandingPageDataFragmentDoc = gql`
     ...CarouselBlockData
     ...ContentRecsBlockData
     ...ContentRecsElementData
-    ...DemoHeroBlockData
     ...HeadingElementData
     ...HeroBlockData
     ...HomePageHeroBlockData
     ...HtmlBlockData
     ...ImageElementData
+    ...JsonLDBlockData
     ...LayoutContainerBlockData
     ...MegaMenuGroupBlockData
     ...MenuNavigationBlockData
@@ -507,12 +509,12 @@ export const LandingPageDataFragmentDoc = gql`
     ...CarouselBlockData
     ...ContentRecsBlockData
     ...ContentRecsElementData
-    ...DemoHeroBlockData
     ...HeadingElementData
     ...HeroBlockData
     ...HomePageHeroBlockData
     ...HtmlBlockData
     ...ImageElementData
+    ...JsonLDBlockData
     ...LayoutContainerBlockData
     ...MegaMenuGroupBlockData
     ...MenuNavigationBlockData
@@ -551,12 +553,12 @@ export const StartPageDataFragmentDoc = gql`
     ...CarouselBlockData
     ...ContentRecsBlockData
     ...ContentRecsElementData
-    ...DemoHeroBlockData
     ...HeadingElementData
     ...HeroBlockData
     ...HomePageHeroBlockData
     ...HtmlBlockData
     ...ImageElementData
+    ...JsonLDBlockData
     ...LayoutContainerBlockData
     ...MegaMenuGroupBlockData
     ...MenuNavigationBlockData
@@ -579,12 +581,12 @@ export const StartPageDataFragmentDoc = gql`
     ...CarouselBlockData
     ...ContentRecsBlockData
     ...ContentRecsElementData
-    ...DemoHeroBlockData
     ...HeadingElementData
     ...HeroBlockData
     ...HomePageHeroBlockData
     ...HtmlBlockData
     ...ImageElementData
+    ...JsonLDBlockData
     ...LayoutContainerBlockData
     ...MegaMenuGroupBlockData
     ...MenuNavigationBlockData
@@ -623,12 +625,12 @@ export const YTHomePageDataFragmentDoc = gql`
     ...CarouselBlockData
     ...ContentRecsBlockData
     ...ContentRecsElementData
-    ...DemoHeroBlockData
     ...HeadingElementData
     ...HeroBlockData
     ...HomePageHeroBlockData
     ...HtmlBlockData
     ...ImageElementData
+    ...JsonLDBlockData
     ...LayoutContainerBlockData
     ...MegaMenuGroupBlockData
     ...MenuNavigationBlockData
@@ -1049,12 +1051,12 @@ export const getContentByIdDocument = gql`
       ...CarouselBlockData
       ...ContentRecsBlockData
       ...ContentRecsElementData
-      ...DemoHeroBlockData
       ...HeadingElementData
       ...HeroBlockData
       ...HomePageHeroBlockData
       ...HtmlBlockData
       ...ImageElementData
+      ...JsonLDBlockData
       ...LayoutContainerBlockData
       ...MegaMenuGroupBlockData
       ...MenuNavigationBlockData
@@ -1090,13 +1092,13 @@ ${CarouselBlockDataFragmentDoc}
 ${IContentListItemFragmentDoc}
 ${ContentRecsBlockDataFragmentDoc}
 ${ContentRecsElementDataFragmentDoc}
-${DemoHeroBlockDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${HeroBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${HomePageHeroBlockDataFragmentDoc}
 ${HtmlBlockDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
+${JsonLDBlockDataFragmentDoc}
 ${LayoutContainerBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${MenuNavigationBlockDataFragmentDoc}
@@ -1160,13 +1162,13 @@ ${CarouselBlockDataFragmentDoc}
 ${IContentListItemFragmentDoc}
 ${ContentRecsBlockDataFragmentDoc}
 ${ContentRecsElementDataFragmentDoc}
-${DemoHeroBlockDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${HeroBlockDataFragmentDoc}
 ${ButtonBlockPropertyDataFragmentDoc}
 ${HomePageHeroBlockDataFragmentDoc}
 ${HtmlBlockDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
+${JsonLDBlockDataFragmentDoc}
 ${LayoutContainerBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${MenuNavigationBlockDataFragmentDoc}
