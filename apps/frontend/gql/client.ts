@@ -215,6 +215,17 @@ export const ImageElementDataFragmentDoc = gql`
   }
 }
     `;
+export const JsonLDBlockDataFragmentDoc = gql`
+    fragment JsonLDBlockData on JsonLDBlock {
+  context
+  type
+  dateModified
+  datePublished
+  headline
+  image
+  seourl: url
+}
+    `;
 export const MegaMenuGroupBlockDataFragmentDoc = gql`
     fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {
   MenuMenuHeading
@@ -342,6 +353,7 @@ export const LayoutContainerBlockDataFragmentDoc = gql`
     ...HomePageHeroBlockData
     ...HtmlBlockData
     ...ImageElementData
+    ...JsonLDBlockData
     ...LayoutContainerBlockData
     ...MegaMenuGroupBlockData
     ...MenuNavigationBlockData
@@ -397,6 +409,7 @@ export const CompositionDataFragmentDoc = gql`
       ...HomePageHeroBlockData
       ...HtmlBlockData
       ...ImageElementData
+      ...JsonLDBlockData
       ...LayoutContainerBlockData
       ...MegaMenuGroupBlockData
       ...MenuNavigationBlockData
@@ -473,6 +486,7 @@ export const LandingPageDataFragmentDoc = gql`
     ...HomePageHeroBlockData
     ...HtmlBlockData
     ...ImageElementData
+    ...JsonLDBlockData
     ...LayoutContainerBlockData
     ...MegaMenuGroupBlockData
     ...MenuNavigationBlockData
@@ -500,6 +514,7 @@ export const LandingPageDataFragmentDoc = gql`
     ...HomePageHeroBlockData
     ...HtmlBlockData
     ...ImageElementData
+    ...JsonLDBlockData
     ...LayoutContainerBlockData
     ...MegaMenuGroupBlockData
     ...MenuNavigationBlockData
@@ -543,6 +558,7 @@ export const StartPageDataFragmentDoc = gql`
     ...HomePageHeroBlockData
     ...HtmlBlockData
     ...ImageElementData
+    ...JsonLDBlockData
     ...LayoutContainerBlockData
     ...MegaMenuGroupBlockData
     ...MenuNavigationBlockData
@@ -570,6 +586,7 @@ export const StartPageDataFragmentDoc = gql`
     ...HomePageHeroBlockData
     ...HtmlBlockData
     ...ImageElementData
+    ...JsonLDBlockData
     ...LayoutContainerBlockData
     ...MegaMenuGroupBlockData
     ...MenuNavigationBlockData
@@ -1006,6 +1023,7 @@ export const getContentByIdDocument = gql`
       ...HomePageHeroBlockData
       ...HtmlBlockData
       ...ImageElementData
+      ...JsonLDBlockData
       ...LayoutContainerBlockData
       ...MegaMenuGroupBlockData
       ...MenuNavigationBlockData
@@ -1046,6 +1064,7 @@ ${ButtonBlockPropertyDataFragmentDoc}
 ${HomePageHeroBlockDataFragmentDoc}
 ${HtmlBlockDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
+${JsonLDBlockDataFragmentDoc}
 ${LayoutContainerBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${MenuNavigationBlockDataFragmentDoc}
@@ -1113,6 +1132,7 @@ ${ButtonBlockPropertyDataFragmentDoc}
 ${HomePageHeroBlockDataFragmentDoc}
 ${HtmlBlockDataFragmentDoc}
 ${ImageElementDataFragmentDoc}
+${JsonLDBlockDataFragmentDoc}
 ${LayoutContainerBlockDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
 ${MenuNavigationBlockDataFragmentDoc}
