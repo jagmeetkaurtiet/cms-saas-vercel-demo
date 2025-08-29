@@ -5,5 +5,5 @@ fragment JsonLDBlockData on JsonLDBlock {
   datePublished
   headline
   image
-  seourl:url
+  seourl: url
 }

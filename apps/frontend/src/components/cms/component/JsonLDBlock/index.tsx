@@ -9,8 +9,11 @@ const JsonLDBlock: CmsComponent<Partial<JsonLDBlockDataFragment>> = ({
     const jsonLdData = {
         "@context": data?.context,
         "@type": data.type ?? "WebSite",
-        "name": data.name ,
-        "url": data.seourl,
+        "dateModified": data.dateModified ,
+        "datePublished": data.datePublished,
+        "headline": data.headline,
+        "image": data.image,
+        "seourl": data.seourl,
       };
   return (
     <>
