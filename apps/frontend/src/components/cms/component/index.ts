@@ -28,6 +28,7 @@ import ButtonBlockComponent from "./ButtonBlock";
 import BlogListingBlockComponent from "./BlogListingBlock";
 import BlogListingBlockBlogListingBlockComponent from "./BlogListingBlock/blog-listing-block";
 import ArticleListElementComponent from "./ArticleListElement";
+import JsonLDBlock from "./JsonLDBlock";
 
 // Build dictionary
 export const ComponentFactory : ComponentTypeDictionary = [
@@ -138,7 +139,11 @@ export const ComponentFactory : ComponentTypeDictionary = [
     { 
         type: "ArticleListElement", 
         component: ArticleListElementComponent 
-    }
+    },
+    { 
+        type: "JsonLDBlock", 
+        component: JsonLDBlock 
+    },
 ];
 
 // Export dictionary
