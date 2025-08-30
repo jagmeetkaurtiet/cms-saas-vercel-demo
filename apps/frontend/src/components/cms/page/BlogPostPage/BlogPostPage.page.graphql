@@ -8,4 +8,7 @@ fragment BlogPostPageData on BlogPostPage {
         json
     }
     blogAuthor: ArticleAuthor
+    JsonLD{
+    ...BlockData
+    }
 }

@@ -451,6 +451,34 @@ export const BlogPostPageDataFragmentDoc = gql`
     json
   }
   blogAuthor: ArticleAuthor
+  JsonLD {
+    ...BlockData
+    ...ArticleListElementData
+    ...BlogListingBlockData
+    ...ButtonBlockData
+    ...CTAElementData
+    ...CardBlockData
+    ...CarouselBlockData
+    ...ContentRecsBlockData
+    ...ContentRecsElementData
+    ...HeadingElementData
+    ...HeroBlockData
+    ...HomePageHeroBlockData
+    ...HtmlBlockData
+    ...ImageElementData
+    ...JsonLDBlockData
+    ...LayoutContainerBlockData
+    ...MegaMenuGroupBlockData
+    ...MenuNavigationBlockData
+    ...OdpEmbedBlockData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...QuoteBlockData
+    ...TestimonialElementData
+    ...TextBlockData
+    ...VideoElementData
+    ...BlankSectionData
+  }
 }
     `;
 export const BlogPostPageSearchResultFragmentDoc = gql`

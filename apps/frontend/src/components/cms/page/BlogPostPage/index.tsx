@@ -13,7 +13,9 @@ import BlogListingBlock from "@/components/cms/component/BlogListingBlock";
 import Image from "@/components/shared/cms_image";
 import { getLinkData, linkDataToUrl } from "@/lib/urls";
 import { toValidOpenGraphType } from "@/lib/opengraph";
-
+import {
+  CmsContentArea,
+} from "@remkoj/optimizely-cms-react/rsc";
 // SDK Components
 import { type OptimizelyNextPage } from "@remkoj/optimizely-cms-nextjs";
 import { CmsEditable, getServerContext } from "@remkoj/optimizely-cms-react/rsc";
@@ -22,7 +24,7 @@ import { localeToGraphLocale } from "@remkoj/optimizely-graph-client";
 
 export const BlogPostPage: OptimizelyNextPage<BlogPostPageDataFragment> = ({
   contentLink,
-  data: { blogTitle: title, blogImage: image, blogBody: description, blogAuthor: author, blogSubtitle: subtitle },
+  data: { blogTitle: title, blogImage: image, blogBody: description, blogAuthor: author, blogSubtitle: subtitle,JsonLD },
 }) => {
 
   const { factory } = getServerContext()
@@ -69,6 +71,7 @@ export const BlogPostPage: OptimizelyNextPage<BlogPostPageDataFragment> = ({
           selectedPageSize: 3,
         }}
       ></BlogListingBlock>
+      <CmsContentArea items={JsonLD} fieldName="JsonLD" />
     </>
   );
 };

@@ -1,28 +1,29 @@
+// JsonLDBlock.tsx
 import { JsonLDBlockDataFragment, JsonLDBlockDataFragmentDoc } from "@gql/graphql";
 import { CmsComponent } from "@remkoj/optimizely-cms-react";
 import JsonLd from "./JsonScript";
 
-const JsonLDBlock: CmsComponent<Partial<JsonLDBlockDataFragment>> = ({
-  data,
-  inEditMode,
-}) => {
-    const jsonLdData = {
-        "@context": data?.context || "https://schema.org",
-        "@type": data.type ?? "WebSite",
-        "dateModified": data.dateModified ,
-        "datePublished": data.datePublished,
-        "headline": data.headline,
-        "image": data.image,
-        "seourl": data.seourl,
-      };
+const JsonLDBlockComponent: CmsComponent<JsonLDBlockDataFragment> = async ({ data }) => {
+  // Build JSON-LD object
+  const jsonLdData: Record<string, any> = {
+    "@context": data?.context ?? "https://schema.org",
+    "@type": data?.type ?? "WebSite",
+  };
+
+  // Only include keys if they have values
+  if (data?.dateModified) jsonLdData.dateModified = data.dateModified;
+  if (data?.datePublished) jsonLdData.datePublished = data.datePublished;
+  if (data?.headline) jsonLdData.headline = data.headline;
+  if (data?.image) jsonLdData.image = data.image;
+  if (data?.seourl) jsonLdData.url = data.seourl; // SEO url should be "url" in schema.org
+
   return (
     <>
-    <p>Hello</p>
-    <JsonLd data={jsonLdData} />
-  </>
+      <JsonLd data={jsonLdData} />
+    </>
   );
 };
 
-JsonLDBlock.displayName = "JsonLDBlock";
-JsonLDBlock.getDataFragment = () => ["JsonLDBlockData", JsonLDBlockDataFragmentDoc];
-export default JsonLDBlock;
+JsonLDBlockComponent.displayName = "JsonLDBlock";
+JsonLDBlockComponent.getDataFragment = () => ["JsonLDBlockData", JsonLDBlockDataFragmentDoc];
+export default JsonLDBlockComponent;
