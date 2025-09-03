@@ -11404,7 +11404,6 @@ export type YTHeroBannerWhereInput = {
 
 export type YTHomePage = IData & _IContent & _IPage & {
   __typename?: 'YTHomePage';
-  JSONLD?: Maybe<Array<Maybe<_IContent>>>;
   JsonLD?: Maybe<Array<Maybe<_IContent>>>;
   SEOSettings?: Maybe<PageSeoSettingsProperty>;
   YTMain?: Maybe<Array<Maybe<_IContent>>>;
@@ -11433,7 +11432,6 @@ export type YTHomePage_linkArgs = {
 
 export type YTHomePageAutocomplete = {
   __typename?: 'YTHomePageAutocomplete';
-  JSONLD?: Maybe<_IContentAutocomplete>;
   JsonLD?: Maybe<_IContentAutocomplete>;
   SEOSettings?: Maybe<PageSeoSettingsPropertyAutocomplete>;
   YTMain?: Maybe<_IContentAutocomplete>;
@@ -11442,7 +11440,6 @@ export type YTHomePageAutocomplete = {
 
 export type YTHomePageFacet = {
   __typename?: 'YTHomePageFacet';
-  JSONLD?: Maybe<_IContentFacet>;
   JsonLD?: Maybe<_IContentFacet>;
   SEOSettings?: Maybe<PageSeoSettingsPropertyFacet>;
   YTMain?: Maybe<_IContentFacet>;
@@ -11450,7 +11447,6 @@ export type YTHomePageFacet = {
 };
 
 export type YTHomePageOrderByInput = {
-  JSONLD?: InputMaybe<_IContentOrderByInput>;
   JsonLD?: InputMaybe<_IContentOrderByInput>;
   SEOSettings?: InputMaybe<PageSeoSettingsPropertyOrderByInput>;
   YTMain?: InputMaybe<_IContentOrderByInput>;
@@ -11478,7 +11474,6 @@ export type YTHomePageOutputtotalArgs = {
 };
 
 export type YTHomePageWhereInput = {
-  JSONLD?: InputMaybe<_IContentWhereInput>;
   JsonLD?: InputMaybe<_IContentWhereInput>;
   SEOSettings?: InputMaybe<PageSeoSettingsPropertyWhereInput>;
   YTMain?: InputMaybe<_IContentWhereInput>;
