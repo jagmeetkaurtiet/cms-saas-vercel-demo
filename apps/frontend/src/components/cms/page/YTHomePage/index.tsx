@@ -37,7 +37,7 @@ export const YTHomePage: CmsComponent<
       
         <body className={`bg-ghost-white dark:bg-vulcan dark:text-white overflow-x-hidden`}>
           <div className="flex min-h-screen flex-col justify-between">
-                <h1 className="text-blue-500">{data.YTTitle}</h1>
+                <h1 className="text-blue-500">{data.Title}</h1>
                 <CmsContentArea items={data.Content} fieldName="Content" />
                 <CmsContentArea items={data.JsonLD} fieldName="JsonLD" />
 
