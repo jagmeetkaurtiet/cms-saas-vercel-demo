@@ -642,8 +642,8 @@ export const StartPageSearchDataFragmentDoc = gql`
     `;
 export const YTHomePageDataFragmentDoc = gql`
     fragment YTHomePageData on YTHomePage {
-  YTTitle
-  YTMain {
+  Title
+  Content {
     ...BlockData
     ...ArticleListElementData
     ...BlogListingBlockData

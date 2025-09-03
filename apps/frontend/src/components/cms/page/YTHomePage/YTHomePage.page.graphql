@@ -1,6 +1,6 @@
 fragment YTHomePageData on YTHomePage {
-  YTTitle
-  YTMain {
+  Title
+  Content {
     ...BlockData
   }
    JsonLD {
