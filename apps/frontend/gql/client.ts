@@ -640,6 +640,67 @@ export const StartPageSearchDataFragmentDoc = gql`
   }
 }
     `;
+export const YTHomePageDataFragmentDoc = gql`
+    fragment YTHomePageData on YTHomePage {
+  YTTitle
+  YTMain {
+    ...BlockData
+    ...ArticleListElementData
+    ...BlogListingBlockData
+    ...ButtonBlockData
+    ...CTAElementData
+    ...CardBlockData
+    ...CarouselBlockData
+    ...ContentRecsBlockData
+    ...ContentRecsElementData
+    ...HeadingElementData
+    ...HeroBlockData
+    ...HomePageHeroBlockData
+    ...HtmlBlockData
+    ...ImageElementData
+    ...JsonLDBlockData
+    ...LayoutContainerBlockData
+    ...MegaMenuGroupBlockData
+    ...MenuNavigationBlockData
+    ...OdpEmbedBlockData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...QuoteBlockData
+    ...TestimonialElementData
+    ...TextBlockData
+    ...VideoElementData
+    ...BlankSectionData
+  }
+  JsonLD {
+    ...BlockData
+    ...ArticleListElementData
+    ...BlogListingBlockData
+    ...ButtonBlockData
+    ...CTAElementData
+    ...CardBlockData
+    ...CarouselBlockData
+    ...ContentRecsBlockData
+    ...ContentRecsElementData
+    ...HeadingElementData
+    ...HeroBlockData
+    ...HomePageHeroBlockData
+    ...HtmlBlockData
+    ...ImageElementData
+    ...JsonLDBlockData
+    ...LayoutContainerBlockData
+    ...MegaMenuGroupBlockData
+    ...MenuNavigationBlockData
+    ...OdpEmbedBlockData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...QuoteBlockData
+    ...TestimonialElementData
+    ...TextBlockData
+    ...VideoElementData
+    ...BlankSectionData
+  }
+}
+    `;
 export const HtmlBlockFragmentDoc = gql`
     fragment HtmlBlock on HtmlBlock {
   title: HtmlBlockHeading
@@ -1068,6 +1129,7 @@ export const getContentByIdDocument = gql`
       ...LandingPageData
       ...StandardPageData
       ...StartPageData
+      ...YTHomePageData
     }
   }
 }
@@ -1114,7 +1176,8 @@ ${IElementDataFragmentDoc}
 ${BlogPostPageDataFragmentDoc}
 ${LandingPageDataFragmentDoc}
 ${StandardPageDataFragmentDoc}
-${StartPageDataFragmentDoc}`;
+${StartPageDataFragmentDoc}
+${YTHomePageDataFragmentDoc}`;
 export const getContentByPathDocument = gql`
     query getContentByPath($path: [String!]!, $locale: [Locales!], $siteId: String) {
   content: _Content(
@@ -1130,6 +1193,7 @@ export const getContentByPathDocument = gql`
       ...LandingPageData
       ...StandardPageData
       ...StartPageData
+      ...YTHomePageData
     }
   }
 }
@@ -1176,7 +1240,8 @@ ${BlankSectionDataFragmentDoc}
 ${BlogPostPageDataFragmentDoc}
 ${LandingPageDataFragmentDoc}
 ${StandardPageDataFragmentDoc}
-${StartPageDataFragmentDoc}`;
+${StartPageDataFragmentDoc}
+${YTHomePageDataFragmentDoc}`;
 export const getContentTypeDocument = gql`
     query getContentType($key: String!, $version: String, $locale: [Locales!], $path: String, $domain: String) {
   content: _Content(
