@@ -6,4 +6,5 @@ fragment JsonLDBlockData on JsonLDBlock {
   headline
   image
   seourl: url
+  script { json, html }
 }

@@ -224,6 +224,10 @@ export const JsonLDBlockDataFragmentDoc = gql`
   headline
   image
   seourl: url
+  script {
+    json
+    html
+  }
 }
     `;
 export const MegaMenuGroupBlockDataFragmentDoc = gql`
