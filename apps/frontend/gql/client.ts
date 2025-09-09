@@ -226,7 +226,6 @@ export const JsonLDBlockDataFragmentDoc = gql`
   seourl: url
   script {
     json
-    html
   }
 }
     `;
