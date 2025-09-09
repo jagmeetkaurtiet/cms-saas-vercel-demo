@@ -16,8 +16,8 @@ const JsonLDBlockComponent: CmsComponent<JsonLDBlockDataFragment> = async ({ dat
   if (data?.headline) jsonLdData.headline = data.headline;
   if (data?.image) jsonLdData.image = data.image;
   if (data?.seourl) jsonLdData.url = data.seourl; // SEO url should be "url" in schema.org
-  if (data?.script) jsonLdData.script = data.script;
-  var jsonLdData1 = JSON.parse(data.script);
+  if (data?.script) jsonLdData.script = data?.script;
+  var jsonLdData1 = JSON.parse(data?.script);
   return <JsonLd data={jsonLdData1} />;
  
 };
