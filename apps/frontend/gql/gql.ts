@@ -29,7 +29,7 @@ const documents = {
     "fragment HomePageHeroBlockData on HomePageHeroBlock {\n  homeHeroHeading: HomeHeroBlockHeading\n  homeHeroSubheading: HomeHeroBlockSubHeading\n  leftImage: HomeHeroLeftImage {\n    ...ReferenceData\n  }\n  rightImage: HomeHeroRightImage {\n    ...ReferenceData\n  }\n  homeHeroButton: HomeHeroButtonBlock {\n    ...ButtonBlockPropertyData\n  }\n}": types.HomePageHeroBlockDataFragmentDoc,
     "fragment HtmlBlockData on HtmlBlock {\n  HtmlBlockHeading\n  HtmlContent {\n    json\n    html\n  }\n}": types.HtmlBlockDataFragmentDoc,
     "fragment ImageElementData on ImageElement {\n  altText\n  imageLink {\n    ...ReferenceData\n  }\n}": types.ImageElementDataFragmentDoc,
-    "fragment JsonLDBlockData on JsonLDBlock {\n  context\n  type\n  dateModified\n  datePublished\n  headline\n  image\n  seourl: url\n  script {\n    json\n  }\n}": types.JsonLDBlockDataFragmentDoc,
+    "fragment JsonLDBlockData on JsonLDBlock {\n  context\n  type\n  dateModified\n  datePublished\n  headline\n  image\n  seourl: url\n  script\n}": types.JsonLDBlockDataFragmentDoc,
     "fragment LayoutContainerBlockData on LayoutContainerBlock {\n  columns: ColumnsCount\n  gap: GapSize\n  LayoutContentArea {\n    ...BlockData\n  }\n  containerColor: ContainerBackgroundColor\n  backgroundImage: ContainerBackgroundImage {\n    ...ReferenceData\n  }\n  marginTop: ContainerMarginTop\n  marginBottom: ContainerMarginBottom\n  paddingBottom: ContainerPaddingBottom\n  paddingTop: ContainerPaddingTop\n}": types.LayoutContainerBlockDataFragmentDoc,
     "fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {\n  MenuMenuHeading\n  MegaMenuUrl {\n    ...LinkData\n  }\n  MegaMenuContentArea {\n    ...IContentListItem\n  }\n}": types.MegaMenuGroupBlockDataFragmentDoc,
     "fragment MenuNavigationBlockData on MenuNavigationBlock {\n  MenuNavigationHeading\n  NavigationLinks {\n    ...LinkItemData\n  }\n}": types.MenuNavigationBlockDataFragmentDoc,
@@ -140,7 +140,7 @@ export function gql(source: "fragment ImageElementData on ImageElement {\n  altT
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment JsonLDBlockData on JsonLDBlock {\n  context\n  type\n  dateModified\n  datePublished\n  headline\n  image\n  seourl: url\n  script {\n    json\n  }\n}"): (typeof documents)["fragment JsonLDBlockData on JsonLDBlock {\n  context\n  type\n  dateModified\n  datePublished\n  headline\n  image\n  seourl: url\n  script {\n    json\n  }\n}"];
+export function gql(source: "fragment JsonLDBlockData on JsonLDBlock {\n  context\n  type\n  dateModified\n  datePublished\n  headline\n  image\n  seourl: url\n  script\n}"): (typeof documents)["fragment JsonLDBlockData on JsonLDBlock {\n  context\n  type\n  dateModified\n  datePublished\n  headline\n  image\n  seourl: url\n  script\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
