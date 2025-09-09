@@ -12,7 +12,7 @@ const JsonLd: React.FC<JsonLdProps> = ({ data, id = "json-ld" }) => {
       type="application/ld+json"
       id={id}
       strategy="afterInteractive"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data.script, null, 2) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data, null, 2) }}
     />
   );
 };
